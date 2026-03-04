@@ -1,0 +1,39 @@
+{
+    "name": "food-ordering-system",
+    "description": "A Laravel-based food ordering system.",
+    "type": "project",
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^9.0",
+        "fideloper/proxy": "^4.4",
+        "laravel/tinker": "^2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": "Illuminate\Foundation\ComposerScripts::postAutoloadDump",
+        "post-update-cmd": [
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:meta",
+            "php artisan ide-helper:models -N"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    }
+}
